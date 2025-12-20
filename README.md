@@ -56,38 +56,32 @@ d = \sqrt{\sum_{i=0}^{N-1} (y_i - x_i)^2}
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-drrss
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-drrss = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-drrss@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var drrss = require( 'path/to/vendor/umd/blas-ext-base-drrss/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-drrss@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.drrss;
-})();
-</script>
+var drrss = require( '@stdlib/blas-ext-base-drrss' );
 ```
 
 #### drrss( N, x, strideX, y, strideY )
@@ -194,14 +188,9 @@ var z = drrss.ndarray( 4, x, 2, 1, y, 2, 1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-drrss@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var drrss = require( '@stdlib/blas-ext-base-drrss' );
 
 var opts = {
     'dtype': 'float64'
@@ -214,11 +203,6 @@ console.log( y );
 
 var d = drrss( x.length, x, 1, y, 1 );
 console.log( d );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -227,7 +211,143 @@ console.log( d );
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/blas/ext/base/drrss.h"
+```
+
+#### stdlib_strided_drrss( N, \*X, strideX, \*Y, strideY )
+
+Computes the square root of the [residual sum of squares][wikipedia-residual-sum-of-squares] of two double-precision floating-point strided arrays.
+
+```c
+const double x[] = { 1.0, -2.0, 2.0 };
+const double y[] = { 1.0, 1.0, -4.0 };
+
+double z = stdlib_strided_drrss( 3, x, 1, y, 1 );
+// returns ~6.7
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] CBLAS_INT` number of indexed elements.
+-   **X**: `[in] double*` first input array.
+-   **strideX**: `[in] CBLAS_INT` stride length for `X`.
+-   **Y**: `[in] double*` second input array.
+-   **strideY**: `[in] CBLAS_INT` stride length for `Y`.
+
+```c
+double stdlib_strided_drrss( const CBLAS_INT N, const double *X, const CBLAS_INT strideX, const double *Y, const CBLAS_INT strideY );
+```
+
+<!--lint ignore maximum-heading-length-->
+
+#### stdlib_strided_drrss_ndarray( N, \*X, strideX, offsetX, \*Y, strideY, offsetY )
+
+<!--lint enable maximum-heading-length-->
+
+Computes the square root of the [residual sum of squares][wikipedia-residual-sum-of-squares] of two double-precision floating-point strided arrays using alternative indexing semantics.
+
+```c
+const double x[] = { 1.0, -2.0, 2.0 };
+const double y[] = { 1.0, 1.0, -4.0 };
+
+double v = stdlib_strided_drrss_ndarray( 3, x, 1, 0, 1, 0 );
+// returns ~6.7
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] CBLAS_INT` number of indexed elements.
+-   **X**: `[in] double*` first input array.
+-   **strideX**: `[in] CBLAS_INT` stride length for `X`.
+-   **offsetX**: `[in] CBLAS_INT` starting index for `X`.
+-   **Y**: `[in] double*` second input array.
+-   **strideY**: `[in] CBLAS_INT` stride length for `Y`.
+-   **offsetY**: `[in] CBLAS_INT` starting index for `Y`.
+
+```c
+double stdlib_strided_drrss_ndarray( const CBLAS_INT N, const double *X, const CBLAS_INT strideX, const CBLAS_INT offsetX, const double *Y, const CBLAS_INT strideY, const CBLAS_INT offsetY );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/blas/ext/base/drrss.h"
+#include <stdio.h>
+
+int main( void ) {
+    // Create two strided arrays:
+    const double x[] = { 1.0, -2.0, -4.0, 5.0, 0.0, 3.0 };
+    const double y[] = { 5.0, 12.0, -8.0, 15.0, 9.0, 0.0 };
+
+    // Specify the number of elements:
+    const int N = 5;
+
+    // Specify the stride lengths:
+    const int strideX = 1;
+    const int strideY = 1;
+
+    // Compute the square root of the residual sum of squares of `x` and `y`:
+    double d = stdlib_strided_drrss( N, x, strideX, y, strideY );
+
+    // Print the result:
+    printf( "drrss: %lf\n", d );
+
+    // Specify index offsets:
+    const int offsetX = 1;
+    const int offsetY = 1;
+
+    // Compute the square root of the residual sum of squares of `x` and `y` with offsets:
+    d = stdlib_strided_drrss_ndarray( N, x, strideX, offsetX, y, strideY, offsetY );
+
+    // Print the result:
+    printf( "drrss: %lf\n", d );
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -289,8 +409,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
+[chat-image]: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+[chat-url]: https://stdlib.zulipchat.com
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
@@ -311,7 +431,7 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [wikipedia-residual-sum-of-squares]: https://en.wikipedia.org/wiki/Residual_sum_of_squares
 
-[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64/tree/umd
+[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
