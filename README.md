@@ -63,6 +63,11 @@ d = \sqrt{\sum_{i=0}^{N-1} (y_i - x_i)^2}
 ## Usage
 
 ```javascript
+import drrss from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-drrss@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/blas-ext-base-drrss/tags). For example,
+
+```javascript
 import drrss from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-drrss@v0.1.0-esm/index.mjs';
 ```
 
@@ -177,7 +182,7 @@ var z = drrss.ndarray( 4, x, 2, 1, y, 2, 1 );
 <script type="module">
 
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@esm/index.mjs';
-import drrss from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-drrss@v0.1.0-esm/index.mjs';
+import drrss from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-drrss@esm/index.mjs';
 
 var opts = {
     'dtype': 'float64'
