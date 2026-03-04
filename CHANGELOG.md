@@ -2,6 +2,40 @@
 
 > Package changelog.
 
+<section class="release" id="unreleased">
+
+## Unreleased (2026-03-04)
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`5580cbf`](https://github.com/stdlib-js/stdlib/commit/5580cbfe037815ebde8175b87c07a9b38c172a93) - **bench:** refactor to use string interpolation in blas/ext/base/drrss [(#10685)](https://github.com/stdlib-js/stdlib/pull/10685) _(by Kamal Singh Rautela)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 1 person contributed to this release. Thank you to this contributor:
+
+-   Kamal Singh Rautela
+
+</section>
+
+<!-- /.contributors -->
+
+</section>
+
+<!-- /.release -->
+
 <section class="release" id="v0.1.1">
 
 ## 0.1.1 (2026-02-07)
