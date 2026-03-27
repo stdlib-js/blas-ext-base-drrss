@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`3bf34ec`](https://github.com/stdlib-js/stdlib/commit/3bf34ec6df7f894f7cbee125eb3f655ebb2d6a4e) - **chore:** fix typos, grammar, and minor issues across multiple packages [(#11167)](https://github.com/stdlib-js/stdlib/pull/11167) _(by Philipp Burckhardt)_
 -   [`bf03c10`](https://github.com/stdlib-js/stdlib/commit/bf03c101fdc1f29ee4838246efe4161ffa673ab8) - **docs:** fix examples _(by Athan Reines)_
 -   [`5580cbf`](https://github.com/stdlib-js/stdlib/commit/5580cbfe037815ebde8175b87c07a9b38c172a93) - **bench:** refactor to use string interpolation in blas/ext/base/drrss [(#10685)](https://github.com/stdlib-js/stdlib/pull/10685) _(by Kamal Singh Rautela)_
 
@@ -25,10 +26,11 @@
 
 ### Contributors
 
-A total of 2 people contributed to this release. Thank you to the following contributors:
+A total of 3 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
 -   Kamal Singh Rautela
+-   Philipp Burckhardt
 
 </section>
 
