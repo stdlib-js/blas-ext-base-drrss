@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-09-07)
+## Unreleased (2026-10-13)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`3c34d8c`](https://github.com/stdlib-js/stdlib/commit/3c34d8cd0fb67f717a75cc904e0bcd655644f40f) - **test:** migrate `blas/ext/base/drrss` to ULP-based assertions [(#16087)](https://github.com/stdlib-js/stdlib/pull/16087) _(by Divyanshu)_
 -   [`35566af`](https://github.com/stdlib-js/stdlib/commit/35566af0add64775e60422fd16e50e1bec3947e7) - **docs:** fix C examples in READMEs [(#11229)](https://github.com/stdlib-js/stdlib/pull/11229) _(by anee3, Athan Reines)_
 -   [`3bf34ec`](https://github.com/stdlib-js/stdlib/commit/3bf34ec6df7f894f7cbee125eb3f655ebb2d6a4e) - **chore:** fix typos, grammar, and minor issues across multiple packages [(#11167)](https://github.com/stdlib-js/stdlib/pull/11167) _(by Philipp Burckhardt)_
 -   [`bf03c10`](https://github.com/stdlib-js/stdlib/commit/bf03c101fdc1f29ee4838246efe4161ffa673ab8) - **docs:** fix examples _(by Athan Reines)_
@@ -27,9 +28,10 @@
 
 ### Contributors
 
-A total of 4 people contributed to this release. Thank you to the following contributors:
+A total of 5 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
+-   Divyanshu
 -   Kamal Singh Rautela
 -   Philipp Burckhardt
 -   anee3
